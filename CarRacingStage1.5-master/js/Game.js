@@ -48,12 +48,12 @@ class Game {
     if(allPlayers !== undefined){
       //var display_position = 100;
       background("#C68767");
-      Image(t , 0 , -displayHeight*4 , displayWidth , displayHeight*5);
+      image(t , 0 , -displayHeight*4 , displayWidth , displayHeight*5);
       //index of the array
       var index = 0;
 
       //x and y position of the cars
-      var x = 0;
+      var x = 130;
       var y;
 
       for(var plr in allPlayers){
@@ -83,7 +83,15 @@ class Game {
       player.distance +=10
       player.update();
     }
-
+    if(player.distance > 4000)
+    {
+     gameState = 2;
+    }
+    
     drawSprites();
   }
+    end()
+    {
+      console.log("gameEnded")
+    }
 }
